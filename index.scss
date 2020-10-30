@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "Raleway";
+    src: url("./fonts/Raleway.woff2") format("woff2"),
+         url("./fonts/Raleway.woff") format("woff");
+  }
+
+body {
+    margin: 0;
+    margin: 16px;
+    h1 {
+        text-align: center;
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 30px;
+        color: #000000;
+        margin: 0;
+        padding-bottom: 30px;
+        padding-top: 30px;
+    }
+    form {
+        max-width: 614px;
+        margin: 10px;
+    }
+    .text {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 120%;
+        color: #000000;
+        max-width: 614px;
+        // max-height: 301px;
+        margin: 0;
+        padding-left: 50px;
+        border-left: 4px solid black;
+    }
+    button {
+        margin-left: 100px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        background-color: black;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-size: 16px;
+        color: white;
+    }
+}

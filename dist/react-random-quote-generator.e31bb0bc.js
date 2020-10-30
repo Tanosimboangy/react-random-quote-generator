@@ -29772,7 +29772,31 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"component/App.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"component/Text.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = App;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function App({
+  data,
+  setData,
+  handleClick
+}) {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", {
+    className: "text"
+  }, data.quoteText), /*#__PURE__*/_react.default.createElement("button", {
+    type: "button",
+    onClick: handleClick
+  }, data.quoteAuthor, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("small", null, data.quoteGenre)));
+}
+},{"react":"node_modules/react/index.js"}],"component/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -29782,43 +29806,63 @@ exports.default = App;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _Text = _interopRequireDefault(require("./Text.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+// import { Link, useParams, BrowserRouter as Router, Switch, Route} from "react-router-dom";
 function App() {
-  const [data, setData] = (0, _react.useState)([]);
+  const [data, setData] = (0, _react.useState)([]); // const el = await fetch("https://quote-garden.herokuapp.com/api/v2/quotes/random")
+  // const el = await fetch("https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=10");
 
   async function FetchingData() {
-    const el = await fetch("https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=10");
+    const link = "https://quote-garden.herokuapp.com/api/v2/quotes/random";
+    const el = await fetch(link);
     const res = await el.json();
-    setData(res.quotes);
+    setData(res.quote);
   }
 
   (0, _react.useEffect)(() => {
     FetchingData();
   }, []);
 
-  function randomData() {
-    const item = Math.floor(Math.random() * data.length);
-    item(data);
+  function handleClick(e) {
+    e.preventDefault();
+    FetchingData();
   }
 
-  function HandlClick() {
-    const oneRandomeQuote = randomData();
-    setData(oneRandomeQuote.quoteText); // setQuoteAuth(oneRandomeQuote.qouteAuthor);
-
-    console.log(oneRandomeQuote);
-  }
-
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "Random Quotes Generator"), /*#__PURE__*/_react.default.createElement("div", {
+  console.log(data);
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "Random Quotes Generator"), /*#__PURE__*/_react.default.createElement("div", {
     key: data.id
-  }, /*#__PURE__*/_react.default.createElement("h2", null, data.quoteText), /*#__PURE__*/_react.default.createElement("button", {
-    type: "button",
-    onClick: HandlClick
-  }, "Button")));
+  }, /*#__PURE__*/_react.default.createElement(_Text.default, {
+    data: data,
+    useData: setData,
+    handleClick: handleClick
+  })));
 }
-},{"react":"node_modules/react/index.js"}],"index.js":[function(require,module,exports) {
+
+{
+  /* <Router>
+     <Switch>
+         <Route path="/other">
+             <OtherQuotes render= {
+                 function() {
+             } />
+         </Route>
+         <Route path="/">
+             <RandomQuote render={
+             } />
+         </Route>
+     </Switch>
+  </Router> */
+}
+},{"react":"node_modules/react/index.js","./Text.js":"component/Text.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -29830,7 +29874,7 @@ var _App = _interopRequireDefault(require("./component/App.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_App.default, null), document.getElementById('root'));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./component/App.js":"component/App.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./component/App.js":"component/App.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -29858,7 +29902,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58811" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54758" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -30034,5 +30078,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/react-random-quote-generator.e31bb0bc.js.map

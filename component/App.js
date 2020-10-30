@@ -1,37 +1,63 @@
 import React, {useState, useEffect} from "react";
+// import { Link, useParams, BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Text from "./Text.js";
+
 
 export default function App() {
     const [data, setData] = useState([]);
 
-    async function FetchingData() {
-        const el = await fetch("https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=10");
-        const res = await el.json();
-        setData(res.quotes);
-    }
+    // const el = await fetch("https://quote-garden.herokuapp.com/api/v2/quotes/random")
+    // const el = await fetch("https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=10");
 
+    async function FetchingData() {
+        const  link = "https://quote-garden.herokuapp.com/api/v2/quotes/random";
+        const el = await fetch(link);
+        const res = await el.json();
+        setData(res.quote);
+    }
     useEffect(() => {
         FetchingData();
     }, [])
 
-    function randomData() {
-        const item = Math.floor(Math.random() * data.length);
-        item(data);
+    function handleClick(e) {
+        e.preventDefault();
+        FetchingData();
     }
-
-    function HandlClick() {
-        const oneRandomeQuote = randomData();
-        setData(oneRandomeQuote.quoteText);
-        // setQuoteAuth(oneRandomeQuote.qouteAuthor);
-        console.log(oneRandomeQuote)
-    }
-
+    console.log(data);
     return (
-        <>
+        <div className="container">
             <h1>Random Quotes Generator</h1>
             <div key={data.id}>
-                <h2>{data.quoteText}</h2>
-                <button type="button" onClick={HandlClick}>Button</button>
+                <Text data={data} useData={setData} handleClick={handleClick} />
             </div>
-        </>
+            {/* <Router>
+				<Switch>
+					<Route>
+                        <Link to="/new">
+                            <NewList />
+                        </Link>
+					</Route>
+					<Route path="/">
+						<MoviesList />
+					</Route>
+				</Switch>
+			</Router> */}
+        </div>
     )
 }
+
+
+
+{/* <Router>
+    <Switch>
+        <Route path="/other">
+            <OtherQuotes render= {
+                function() {
+            } />
+        </Route>
+        <Route path="/">
+            <RandomQuote render={
+            } />
+        </Route>
+    </Switch>
+</Router> */}
