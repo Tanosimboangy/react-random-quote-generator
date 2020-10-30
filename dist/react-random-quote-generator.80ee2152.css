@@ -18,9 +18,9 @@ body h1 {
   padding-bottom: 30px;
   padding-top: 30px;
 }
-body form {
+body .container {
   max-width: 614px;
-  margin: 10px;
+  margin: auto;
 }
 body .text {
   font-family: "Raleway";
@@ -32,7 +32,7 @@ body .text {
   max-width: 614px;
   margin: 0;
   padding-left: 50px;
-  border-left: 4px solid black;
+  border-left: 4px solid orange;
 }
 body button {
   margin-left: 100px;

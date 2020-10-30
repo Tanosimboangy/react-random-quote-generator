@@ -1,29 +1,9 @@
 import React, {useState, useEffect} from "react";
-// import { Link, useParams, BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import {useParams} from "react-router-dom";
+import { Link, useParams, BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Text from "./Text.js";
-const BASE_URL = "https://quote-garden.herokuapp.com/api/v2/authors/: "
-const API_KEY = "?page=1&limit=10"
-
 
 export default function App() {
     const [data, setData] = useState([]);
-    const [newData, setNewData] = useState([]);
-    
-    const  { newAuth } = useParams();
-    async function FetchingNewData() {
-        try {
-            const newEl = await fetch(BASE_URL + newAuth + API_KEY);
-            const newRes = await newEl.json();
-            setNewData(newRes);
-        }catch(e) {
-            console.log(e);
-        }
-    }
-    useEffect(() => {
-        FetchingNewData();
-    }, [newAuth])
-    console.log(newData);
     
     async function FetchingData() {
         const  link = "https://quote-garden.herokuapp.com/api/v2/quotes/random";
@@ -42,21 +22,16 @@ export default function App() {
     return (
         <div className="container">
             <h1>Random Quotes Generator</h1>
-            <div key={data.id}>
-                <Text data={data} useData={setData} handleClick={handleClick} />
-            </div>
-            {/* <Router>
+            <Router>
 				<Switch>
 					<Route>
-                        <Link to="/new">
-                            <NewList />
-                        </Link>
+                        <Text data={data} useData={setData} handleClick={handleClick} />
 					</Route>
 					<Route path="/">
-						<MoviesList />
+						
 					</Route>
 				</Switch>
-			</Router> */}
+			</Router>
         </div>
     )
 }

@@ -33897,31 +33897,8 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-// import { Link, useParams, BrowserRouter as Router, Switch, Route} from "react-router-dom";
-const BASE_URL = "https://quote-garden.herokuapp.com/api/v2/authors/: ";
-const API_KEY = "?page=1&limit=10";
-
 function App() {
   const [data, setData] = (0, _react.useState)([]);
-  const [newData, setNewData] = (0, _react.useState)([]);
-  const {
-    newAuth
-  } = (0, _reactRouterDom.useParams)();
-
-  async function FetchingNewData() {
-    try {
-      const newEl = await fetch(BASE_URL + newAuth + API_KEY);
-      const newRes = await newEl.json();
-      setNewData(newRes);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  (0, _react.useEffect)(() => {
-    FetchingNewData();
-  }, [newAuth]);
-  console.log(newData);
 
   async function FetchingData() {
     const link = "https://quote-garden.herokuapp.com/api/v2/quotes/random";
@@ -33941,13 +33918,13 @@ function App() {
 
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
-  }, /*#__PURE__*/_react.default.createElement("h1", null, "Random Quotes Generator"), /*#__PURE__*/_react.default.createElement("div", {
-    key: data.id
-  }, /*#__PURE__*/_react.default.createElement(_Text.default, {
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "Random Quotes Generator"), /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, null, /*#__PURE__*/_react.default.createElement(_Text.default, {
     data: data,
     useData: setData,
     handleClick: handleClick
-  })));
+  })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/"
+  }))));
 }
 
 {
@@ -34005,7 +33982,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54758" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60694" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
