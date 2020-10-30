@@ -7,17 +7,45 @@
 body {
     margin: 0;
     margin: 16px;
-    h1 {
-        text-align: center;
-        font-family: "Raleway";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 30px;
-        color: #000000;
+    ul {
         margin: 0;
-        padding-bottom: 30px;
-        padding-top: 30px;
+        padding: 0;
+        li {
+            list-style: none;
+        }
+    }
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        h1 {
+            text-align: center;
+            font-family: "Raleway";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 30px;
+            color: #000000;
+            margin: 0;
+            margin-bottom: 30px;
+            margin-top: 30px;
+        }
+        .refresh {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            cursor: pointer;
+            border: none;
+            background-color: white;
+            outline: none;
+            font-family: "Raleway";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 120%;
+            color: #333333;
+        }
     }
     .container {
         max-width: 614px;
@@ -31,21 +59,31 @@ body {
         line-height: 120%;
         color: #000000;
         max-width: 614px;
-        // max-height: 301px;
         margin: 0;
         padding-left: 50px;
         border-left: 4px solid orange;
+        margin-bottom: 100px;
     }
-    button {
-        margin-left: 100px;
-        margin-top: 40px;
-        margin-bottom: 40px;
-        background-color: black;
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        font-size: 16px;
-        color: white;
+    .button {
+        cursor: pointer;
+        background: #333333;
+        margin-inline-start: 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+        padding: 50px 1rem;
+        text-decoration: none;
+        button {
+            background: #333333;
+            border: none;
+            color: #F2F2F2;
+            outline: none;
+            font-family: "Raleway";
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 28px;
+        }
     }
 }
