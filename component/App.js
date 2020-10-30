@@ -1,14 +1,30 @@
 import React, {useState, useEffect} from "react";
 // import { Link, useParams, BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import Text from "./Text.js";
+const BASE_URL = "https://quote-garden.herokuapp.com/api/v2/authors/: "
+const API_KEY = "?page=1&limit=10"
 
 
 export default function App() {
     const [data, setData] = useState([]);
-
-    // const el = await fetch("https://quote-garden.herokuapp.com/api/v2/quotes/random")
-    // const el = await fetch("https://quote-garden.herokuapp.com/api/v2/quotes?page=1&limit=10");
-
+    const [newData, setNewData] = useState([]);
+    
+    const  { newAuth } = useParams();
+    async function FetchingNewData() {
+        try {
+            const newEl = await fetch(BASE_URL + newAuth + API_KEY);
+            const newRes = await newEl.json();
+            setNewData(newRes);
+        }catch(e) {
+            console.log(e);
+        }
+    }
+    useEffect(() => {
+        FetchingNewData();
+    }, [newAuth])
+    console.log(newData);
+    
     async function FetchingData() {
         const  link = "https://quote-garden.herokuapp.com/api/v2/quotes/random";
         const el = await fetch(link);
@@ -23,7 +39,6 @@ export default function App() {
         e.preventDefault();
         FetchingData();
     }
-    console.log(data);
     return (
         <div className="container">
             <h1>Random Quotes Generator</h1>
