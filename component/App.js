@@ -28,6 +28,9 @@ export default function App() {
 					</Route>
 				</Switch>
 			</Router>
+            <footer>
+                <p>Your name @ DevChallenges.io</p>
+            </footer>
         </div>
     )
 }

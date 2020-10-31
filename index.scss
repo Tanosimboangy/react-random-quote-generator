@@ -13,6 +13,11 @@
     src: url("./fonts/Raleway-Bold.woff2") format("woff2"),
          url("./fonts/Raleway-Bold.woff") format("woff");
   }
+@font-face {
+    font-family: "Montserrat";
+    src: url("./fonts/Montserrat-SemiBold.woff2") format("woff2"),
+         url("./fonts/Montserrat-SemiBold.woff") format("woff"),
+  }
 
 body {
     margin: 0;
@@ -35,7 +40,7 @@ body {
             text-align: center;
             font-family: "Raleway";
             font-style: normal;
-            font-weight: 700;
+            font-weight: bold;
             font-size: 30px;
             line-height: 30px;
             margin: 0;
@@ -51,10 +56,8 @@ body {
             background-color: white;
             outline: none;
             font-family: "Raleway";
-            font-style: normal;
             font-weight: 500;
             font-size: 18px;
-            line-height: 120%;
             border-radius: 4px;
         }
     }
@@ -71,7 +74,6 @@ body {
                     font-style: normal;
                     font-weight: bold;
                     font-size: 36px;
-                    // color: #333333;
                     margin: 0;
                     margin-bottom: 40px;
                 }
@@ -138,7 +140,6 @@ body {
                 font-family: "Raleway";
                 font-weight: 500;
                 font-size: 18px;
-                line-height: 120%;
                 border: none;
                 padding-top: 16px;
                 padding-bottom: 16px;
@@ -151,10 +152,8 @@ body {
     }
     .text {
         font-family: "Raleway";
-        font-style: normal;
         font-weight: 500;
         font-size: 26px;
-        line-height: 120%;
         max-width: 614px;
         margin: 0;
         padding-left: 50px;
@@ -177,10 +176,20 @@ body {
             color: #F2F2F2;
             outline: none;
             font-family: "Raleway";
-            font-style: normal;
             font-weight: bold;
             font-size: 24px;
             line-height: 28px;
+        }
+    }
+    footer {
+        p {
+            font-family: "Montserrat";
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+            color: #A9A9A9;
+            text-align: center;
+            padding-top: 20px;
         }
     }
 }

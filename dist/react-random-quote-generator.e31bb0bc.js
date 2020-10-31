@@ -34009,7 +34009,7 @@ function App() {
     data: data,
     useData: setData,
     FetchingData: FetchingData
-  })))));
+  })))), /*#__PURE__*/_react.default.createElement("footer", null, /*#__PURE__*/_react.default.createElement("p", null, "Your name @ DevChallenges.io")));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./NewLists.js":"component/NewLists.js","./Text.js":"component/Text.js"}],"index.js":[function(require,module,exports) {
 "use strict";
@@ -34051,7 +34051,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50050" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50038" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
