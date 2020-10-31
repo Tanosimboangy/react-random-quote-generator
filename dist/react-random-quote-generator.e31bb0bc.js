@@ -33869,12 +33869,13 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function NewLists() {
+function NewLists({
+  data
+}) {
   const [newData, setNewData] = (0, _react.useState)([]);
   const {
     authorName
   } = (0, _reactRouterDom.useParams)();
-  console.log(authorName);
 
   async function FetchingNewData() {
     try {
@@ -33889,10 +33890,9 @@ function NewLists() {
   (0, _react.useEffect)(() => {
     FetchingNewData();
   }, []);
-  console.log(newData);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "sub-container"
-  }, /*#__PURE__*/_react.default.createElement("ul", null, newData.map(newDt => /*#__PURE__*/_react.default.createElement("li", {
+  }, /*#__PURE__*/_react.default.createElement("p", null, data.quoteAuthor), /*#__PURE__*/_react.default.createElement("ul", null, newData.map(newDt => /*#__PURE__*/_react.default.createElement("li", {
     key: newDt.id
   }, newDt.quoteText))), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
@@ -33913,15 +33913,35 @@ var _reactRouterDom = require("react-router-dom");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App({
-  data
+  data,
+  FetchingData
 }) {
-  console.log(data.quoteAuthor);
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("p", {
+  function handleClick(e) {
+    e.preventDefault();
+    FetchingData();
+  }
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("h1", null, "Random Quotes Generator"), /*#__PURE__*/_react.default.createElement("button", {
+    className: "refresh",
+    type: "button",
+    onClick: handleClick
+  }, "Random ", /*#__PURE__*/_react.default.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "blue",
+    width: "24"
+  }, /*#__PURE__*/_react.default.createElement("path", {
+    d: "M0 0h24v24H0z",
+    fill: "none"
+  }), /*#__PURE__*/_react.default.createElement("path", {
+    d: "M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"
+  })))), /*#__PURE__*/_react.default.createElement("p", {
     className: "text"
   }, data.quoteText), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: `/authors/${data.quoteAuthor}`
   }, /*#__PURE__*/_react.default.createElement("ul", {
-    className: "button"
+    className: "button_lists"
   }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("button", null, data.quoteAuthor, " ", data.quoteGenre)), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("button", null, "\u2192")))));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"component/App.js":[function(require,module,exports) {
@@ -33959,37 +33979,18 @@ function App() {
   (0, _react.useEffect)(() => {
     FetchingData();
   }, []);
-
-  function handleClick(e) {
-    e.preventDefault();
-    FetchingData();
-  }
-
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "container"
-  }, /*#__PURE__*/_react.default.createElement("header", null, /*#__PURE__*/_react.default.createElement("h1", null, "Random Quotes Generator"), /*#__PURE__*/_react.default.createElement("button", {
-    className: "refresh",
-    type: "button",
-    onClick: handleClick
-  }, "Random ", /*#__PURE__*/_react.default.createElement("svg", {
-    xmlns: "http://www.w3.org/2000/svg",
-    height: "24",
-    viewBox: "0 0 24 24",
-    fill: "blue",
-    width: "24"
-  }, /*#__PURE__*/_react.default.createElement("path", {
-    d: "M0 0h24v24H0z",
-    fill: "none"
-  }), /*#__PURE__*/_react.default.createElement("path", {
-    d: "M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"
-  })))), /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/authors/:authorName"
-  }, /*#__PURE__*/_react.default.createElement(_NewLists.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  }, /*#__PURE__*/_react.default.createElement(_NewLists.default, {
+    data: data
+  })), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_Text.default, {
     data: data,
     useData: setData,
-    handleClick: handleClick
+    FetchingData: FetchingData
   })))));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./NewLists.js":"component/NewLists.js","./Text.js":"component/Text.js"}],"index.js":[function(require,module,exports) {
@@ -34032,7 +34033,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60858" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50037" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

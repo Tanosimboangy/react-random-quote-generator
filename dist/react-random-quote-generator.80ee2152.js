@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./fonts\\Raleway.woff2":[["Raleway.8fc844a9.woff2","fonts/Raleway.woff2"],"fonts/Raleway.woff2"],"./fonts\\Raleway.woff":[["Raleway.0dad0a3c.woff","fonts/Raleway.woff"],"fonts/Raleway.woff"],"_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./fonts\\Raleway.woff2":[["Raleway.8fc844a9.woff2","fonts/Raleway.woff2"],"fonts/Raleway.woff2"],"./fonts\\Raleway.woff":[["Raleway.0dad0a3c.woff","fonts/Raleway.woff"],"fonts/Raleway.woff"],"./fonts\\Raleway-SemiBold.woff2":[["Raleway-SemiBold.2a8205b7.woff2","fonts/Raleway-SemiBold.woff2"],"fonts/Raleway-SemiBold.woff2"],"./fonts\\Raleway-SemiBold.woff":[["Raleway-SemiBold.47a12791.woff","fonts/Raleway-SemiBold.woff"],"fonts/Raleway-SemiBold.woff"],"./fonts\\Raleway-Bold.woff2":[["Raleway-Bold.37d3649d.woff2","fonts/Raleway-Bold.woff2"],"fonts/Raleway-Bold.woff2"],"./fonts\\Raleway-Bold.woff":[["Raleway-Bold.946586da.woff","fonts/Raleway-Bold.woff"],"fonts/Raleway-Bold.woff"],"_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60858" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50037" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

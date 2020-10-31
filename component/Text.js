@@ -1,13 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function App({data}) {
-    console.log(data.quoteAuthor);
+export default function App({ data, FetchingData }) {
+
+    function handleClick(e) {
+        e.preventDefault();
+        FetchingData();
+    }
+
     return (
-        <>
+        <> 
+            <header>
+                <h1>Random Quotes Generator</h1>
+                <button className="refresh" type="button" onClick={handleClick}>Random <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" fill="blue" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/></svg></button>
+            </header>
             <p className="text">{data.quoteText}</p>
             <Link to={`/authors/${data.quoteAuthor}`}>
-                <ul className="button">
+                <ul className="button_lists">
                     <li><button>{data.quoteAuthor} {data.quoteGenre}</button></li>
                     <li><button>→</button></li>
                 </ul>

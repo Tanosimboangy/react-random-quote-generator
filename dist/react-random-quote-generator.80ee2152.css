@@ -2,6 +2,14 @@
   font-family: "Raleway";
   src: url("/Raleway.8fc844a9.woff2") format("woff2"), url("/Raleway.0dad0a3c.woff") format("woff");
 }
+@font-face {
+  font-family: "Raleway";
+  src: url("/Raleway-SemiBold.2a8205b7.woff2") format("woff2"), url("/Raleway-SemiBold.47a12791.woff") format("woff");
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/Raleway-Bold.37d3649d.woff2") format("woff2"), url("/Raleway-Bold.946586da.woff") format("woff");
+}
 body {
   margin: 0;
   margin: 16px;
@@ -63,7 +71,7 @@ body .text {
   border-left: 4px solid orange;
   margin-bottom: 100px;
 }
-body .button {
+body .button_lists {
   cursor: pointer;
   background: #333333;
   margin-inline-start: 50px;
@@ -74,7 +82,7 @@ body .button {
   padding: 50px 1rem;
   text-decoration: none;
 }
-body .button button {
+body .button_lists button {
   background: #333333;
   border: none;
   color: #F2F2F2;

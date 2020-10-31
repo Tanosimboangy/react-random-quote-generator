@@ -3,6 +3,16 @@
     src: url("./fonts/Raleway.woff2") format("woff2"),
          url("./fonts/Raleway.woff") format("woff");
   }
+@font-face {
+    font-family: "Raleway";
+    src: url("./fonts/Raleway-SemiBold.woff2") format("woff2"),
+         url("./fonts/Raleway-SemiBold.woff") format("woff");
+  }
+@font-face {
+    font-family: "Raleway";
+    src: url("./fonts/Raleway-Bold.woff2") format("woff2"),
+         url("./fonts/Raleway-Bold.woff") format("woff");
+  }
 
 body {
     margin: 0;
@@ -64,7 +74,7 @@ body {
         border-left: 4px solid orange;
         margin-bottom: 100px;
     }
-    .button {
+    .button_lists {
         cursor: pointer;
         background: #333333;
         margin-inline-start: 50px;
