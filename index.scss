@@ -58,8 +58,88 @@ body {
         }
     }
     .container {
-        max-width: 614px;
+        max-width: 720px;
         margin: auto;
+        .sub-container {
+            .sub_heading--list {
+                display: flex;
+                align-items: baseline;
+                justify-content: space-between;
+                h3 {
+                    font-family: "Raleway";
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 36px;
+                    color: #333333;
+                    margin: 0;
+                    margin-bottom: 40px;
+                    padding-inline-start: 100px;
+                }
+                .refresh {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    border: none;
+                    background-color: white;
+                    outline: none;
+                    font-family: "Raleway";
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 120%;
+                    color: #333333;
+                }
+            }
+            ul {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                li p {
+                    font-family: "Raleway";
+                    font-style: normal;
+                    font-size: 18px;
+                    color: white;
+                    margin: 0;
+                    margin-bottom: 40px;
+                    line-height: 30px;
+                    padding-inline-start: 30px;
+                    border-inline-start: 8px solid #F7DF94;
+                    background-color: black;
+                    border-radius: 16px;
+                    padding-top: 16px;
+                    padding-bottom: 16px;
+                    padding-right: 16px;
+                    animation: shake 2s infinite;
+                    animation-direction: alternate;
+                }
+                @keyframes shake {
+                    0% {
+                      transform: skewY(5deg);
+                    }
+                    100% {
+                      transform: skewY(-5deg);
+                    }
+                  }
+                li p:hover {
+                    color: black;
+                    background-color: white;
+                    box-shadow: 2px 2px 4px black;
+                    animation: none;
+                }
+            }
+            .button_homepage {
+                background-color: white;
+                outline: none;
+                font-family: "Raleway";
+                font-style: normal;
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 120%;
+                color: #333333;
+                outline: none;
+                border: none;
+            }
+        }
     }
     .text {
         font-family: "Raleway";

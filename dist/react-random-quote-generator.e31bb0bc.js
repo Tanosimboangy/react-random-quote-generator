@@ -33892,11 +33892,29 @@ function NewLists({
   }, []);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "sub-container"
-  }, /*#__PURE__*/_react.default.createElement("p", null, data.quoteAuthor), /*#__PURE__*/_react.default.createElement("ul", null, newData.map(newDt => /*#__PURE__*/_react.default.createElement("li", {
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "sub_heading--list"
+  }, /*#__PURE__*/_react.default.createElement("h3", null, data.quoteAuthor), /*#__PURE__*/_react.default.createElement("button", {
+    className: "refresh",
+    type: "button"
+  }, "Random ", /*#__PURE__*/_react.default.createElement("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    height: "24",
+    viewBox: "0 0 24 24",
+    fill: "blue",
+    width: "24"
+  }, /*#__PURE__*/_react.default.createElement("path", {
+    d: "M0 0h24v24H0z",
+    fill: "none"
+  }), /*#__PURE__*/_react.default.createElement("path", {
+    d: "M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"
+  })))), /*#__PURE__*/_react.default.createElement("ul", null, newData.map(newDt => /*#__PURE__*/_react.default.createElement("li", {
     key: newDt.id
-  }, newDt.quoteText))), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, /*#__PURE__*/_react.default.createElement("p", null, "\"", newDt.quoteText, "\"")))), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, /*#__PURE__*/_react.default.createElement("button", null, "GO BACK  \u2192")));
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    className: "button_homepage"
+  }, "GO BACK TO HOMEPAGE \u2192")));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"component/Text.js":[function(require,module,exports) {
 "use strict";
@@ -34033,7 +34051,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50037" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50039" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

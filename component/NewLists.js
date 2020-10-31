@@ -19,11 +19,14 @@ export default function NewLists({data}) {
     }, [])
     return (
         <div className="sub-container">
-            <p>{data.quoteAuthor}</p>
+            <div className="sub_heading--list">
+                <h3>{data.quoteAuthor}</h3>
+                <button className="refresh" type="button">Random <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" fill="blue" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/></svg></button>
+            </div>
             <ul>{newData.map((newDt) => (
-                <li key={newDt.id}>{newDt.quoteText}</li>
+                <li key={newDt.id}><p>"{newDt.quoteText}"</p></li>
             ))}</ul>
-            <Link to={"/"}><button>GO BACK  →</button></Link>
+            <Link to={"/"}><button className="button_homepage">GO BACK TO HOMEPAGE →</button></Link>
         </div>
     )
 }
