@@ -13,6 +13,8 @@
 body {
   margin: 0;
   margin: 16px;
+  color: white;
+  background-color: black;
 }
 body ul {
   margin: 0;
@@ -32,9 +34,8 @@ body header h1 {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 30px;
   line-height: 30px;
-  color: #000000;
   margin: 0;
   margin-bottom: 30px;
   margin-top: 30px;
@@ -52,7 +53,7 @@ body header .refresh {
   font-weight: 500;
   font-size: 18px;
   line-height: 120%;
-  color: #333333;
+  border-radius: 4px;
 }
 body .container {
   max-width: 720px;
@@ -68,10 +69,8 @@ body .container .sub-container .sub_heading--list h3 {
   font-style: normal;
   font-weight: bold;
   font-size: 36px;
-  color: #333333;
   margin: 0;
   margin-bottom: 40px;
-  padding-inline-start: 100px;
 }
 body .container .sub-container .sub_heading--list .refresh {
   display: flex;
@@ -81,20 +80,23 @@ body .container .sub-container .sub_heading--list .refresh {
   background-color: white;
   outline: none;
   font-family: "Raleway";
-  font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 120%;
-  color: #333333;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 6px 8px;
 }
 body .container .sub-container ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: black;
+  padding: 1rem;
+  border-radius: 16px;
 }
 body .container .sub-container ul li p {
   font-family: "Raleway";
-  font-style: normal;
   font-size: 18px;
   color: white;
   margin: 0;
@@ -102,6 +104,9 @@ body .container .sub-container ul li p {
   line-height: 30px;
   padding-inline-start: 30px;
   border-inline-start: 8px solid #F7DF94;
+  border-inline-end: 8px solid #F7DF94;
+  border-block-start: 1px solid #F7DF94;
+  border-block-end: 1px solid #F7DF94;
   background-color: black;
   border-radius: 16px;
   padding-top: 16px;
@@ -126,15 +131,17 @@ body .container .sub-container ul li p:hover {
 }
 body .container .sub-container .button_homepage {
   background-color: white;
-  outline: none;
   font-family: "Raleway";
-  font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 120%;
-  color: #333333;
-  outline: none;
   border: none;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+  cursor: pointer;
+  border-radius: 10px;
 }
 body .text {
   font-family: "Raleway";
@@ -142,7 +149,6 @@ body .text {
   font-weight: 500;
   font-size: 26px;
   line-height: 120%;
-  color: #000000;
   max-width: 614px;
   margin: 0;
   padding-left: 50px;
@@ -170,6 +176,14 @@ body .button_lists button {
   font-weight: bold;
   font-size: 24px;
   line-height: 28px;
+}
+
+@media (min-width: 720px) {
+  body .container .sub-container ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
 }
 
 /*# sourceMappingURL=/react-random-quote-generator.80ee2152.css.map */

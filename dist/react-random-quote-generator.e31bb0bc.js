@@ -33901,7 +33901,7 @@ function NewLists({
     xmlns: "http://www.w3.org/2000/svg",
     height: "24",
     viewBox: "0 0 24 24",
-    fill: "blue",
+    fill: "orangered",
     width: "24"
   }, /*#__PURE__*/_react.default.createElement("path", {
     d: "M0 0h24v24H0z",
@@ -34051,7 +34051,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50039" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50050" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
