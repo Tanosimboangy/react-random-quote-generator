@@ -4,10 +4,6 @@
 }
 @font-face {
   font-family: "Raleway";
-  src: url("/Raleway-SemiBold.2a8205b7.woff2") format("woff2"), url("/Raleway-SemiBold.47a12791.woff") format("woff");
-}
-@font-face {
-  font-family: "Raleway";
   src: url("/Raleway-Bold.37d3649d.woff2") format("woff2"), url("/Raleway-Bold.946586da.woff") format("woff");
 }
 @font-face {
